@@ -20,12 +20,17 @@ console.log(url);
 var board = new five.Board();
 board.on("ready", function() {
 
-  var ledRed = new five.Led(13);
-  var ledGreen = new five.Led(12);
-  var ledWhite = new five.Led(11);
-  var ledOrange = new five.Led(10);
 
 
+  var ledRed = new five.Led(13),
+    ledGreen = new five.Led(12),
+    ledWhite = new five.Led(11),
+    ledOrange = new five.Led(10),
+    piezo = new five.Piezo(9);
+
+    board.repl.inject({
+        piezo: piezo
+      });
 
   cron.schedule('*/15 * * * * *', function() {
 
@@ -40,33 +45,37 @@ board.on("ready", function() {
         console.log(status);
 
 
-var switchOffLeds = function(){
-  ledRed.off();
-  ledGreen.off();
-  ledWhite.off();
-  ledOrange.off();
-}
-        // console.log(time_started);
-        // var now = moment(new Date()); //todays date// var end = moment("time_started"); // another date// var duration = moment.duration(now.diff(end));// var hours = duration.hours();// console.log(hours)
-        // "blink" the led in 500ms on-off phase periods
+        var switchOffLeds = function() {
+            ledRed.off();
+            ledGreen.off();
+            ledWhite.off();
+            ledOrange.off();
+          }
+          // console.log(time_started);
+          // var now = moment(new Date()); //todays date// var end = moment("time_started"); // another date// var duration = moment.duration(now.diff(end));// var hours = duration.hours();// console.log(hours)
+          // "blink" the led in 500ms on-off phase periods
 
         if (status == 1) {
           switchOffLeds();
           ledRed.on();
-        }
+          // piezo.play({
+          //   song: "C D F D A - A A A A G G G G - - C D F D G - G G G G F F F F - -",
+          //     beats: 1 / 4,
+          //     tempo: 100
+          //   });
+          //
 
-        else if (status == 0) {
+        } else if (status == 0) {
           switchOffLeds();
           ledGreen.on();
-        }
-        else if (status == null) {
+        } else if (status == null) {
           switchOffLeds();
           ledWhite.on();
-        }
-        else {
+        } else {
           switchOffLeds();
         }
         console.log('running a task every 15 minutes');
+        // ledOrange.on();
       }
     });
 
