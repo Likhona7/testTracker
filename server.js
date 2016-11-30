@@ -39,41 +39,32 @@ board.on("ready", function() {
 
         console.log(status);
 
+
+var switchOffLeds = function(){
+  ledRed.off();
+  ledGreen.off();
+  ledWhite.off();
+  ledOrange.off();
+}
         // console.log(time_started);
         // var now = moment(new Date()); //todays date// var end = moment("time_started"); // another date// var duration = moment.duration(now.diff(end));// var hours = duration.hours();// console.log(hours)
         // "blink" the led in 500ms on-off phase periods
 
         if (status == 1) {
-          ledRed.off();
-          ledGreen.off();
-          ledWhite.off();
-          ledOrange.off();
-
+          switchOffLeds();
           ledRed.on();
         }
 
         else if (status == 0) {
-          ledRed.off();
-          ledGreen.off();
-          ledWhite.off();
-          ledOrange.off();
-
+          switchOffLeds();
           ledGreen.on();
         }
         else if (status == null) {
-
-          ledRed.off();
-          ledGreen.off();
-          ledWhite.off();
-          ledOrange.off();
-
+          switchOffLeds();
           ledWhite.on();
         }
         else {
-          ledRed.off();
-          ledGreen.off();
-          ledWhite.off();
-          ledOrange.off();
+          switchOffLeds();
         }
         console.log('running a task every 15 minutes');
       }
