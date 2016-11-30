@@ -3,4 +3,4 @@
 before_script:
   - npm install
 
-script: mocha
+script: mocha test 
