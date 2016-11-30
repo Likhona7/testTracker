@@ -28,7 +28,7 @@ board.on("ready", function() {
   var ledWhite = new five.Led(11);
 
   // "blink" the led in 500ms on-off phase periods
-ledRed.on();
+  ledRed.on();
 ledGreen.on();
 ledWhite.on();
 
