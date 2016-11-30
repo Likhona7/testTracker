@@ -1,4 +1,5 @@
 var request = require('request');
+var moment = require('moment');
 var five = require("johnny-five");
 var express = require('express');
 var bodyParser = require('body-parser');
@@ -13,8 +14,15 @@ request('https://api.travis-ci.org/repos/Onwa2014/testTracker.json', function (e
 
     // console.log(data)
 var status = data['last_build_status'];
+var time_started = data['last_build_started_at'];
 
 console.log(status);
+
+var now = moment(new Date()); //todays date
+var end = moment("time_started"); // another date
+var duration = moment.duration(now.diff(end));
+var hours = duration.hours();
+console.log(hours)
 
        // Show the HTML for the Google homepage.
   }
