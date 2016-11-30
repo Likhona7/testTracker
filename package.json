@@ -1,0 +1,23 @@
+{
+  "name": "test-tracker",
+  "version": "1.0.0",
+  "description": "This is a device that can be used by development teams to remind them about commiting work on Github and fixing Travis failing test",
+  "main": "minimum_maximum.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Onwa2014/testTracker.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Onwa2014/testTracker/issues"
+  },
+  "homepage": "https://github.com/Onwa2014/testTracker#readme"
+}
