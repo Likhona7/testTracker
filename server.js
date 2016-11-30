@@ -1,11 +1,18 @@
 var request = require('request');
 var moment = require('moment');
 var five = require("johnny-five");
+var cron = require('node-cron');
+
 var express = require('express');
 var bodyParser = require('body-parser');
 var handlebars = require("handlebars");
 var exphbs = require('express-handlebars');
 var app = express();
+
+
+
+
+
 
 
 request('https://api.travis-ci.org/repos/Onwa2014/testTracker.json', function(error, response, body) {
@@ -29,28 +36,34 @@ request('https://api.travis-ci.org/repos/Onwa2014/testTracker.json', function(er
       var ledWhite = new five.Led(11);
       var ledOrange = new five.Led(10);
 
+
+
       // "blink" the led in 500ms on-off phase periods
-if(status == 1){
-  ledRed.blink(100);
-}
-else if (status == 0) {
-  ledGreen.on();
 
-}
+      cron.schedule('*/1 * * * *', function(){
 
-else if(status == null){
-  ledWhite.on();
-}
-else {
-  ledRed.off();
-  ledGreen.off();
-  ledWhite.off();
-  ledOrange.off();
+        if(status == 1){
+          ledRed.blink(100);
+        }
+        else if (status == 0) {
+          ledGreen.on();
+        }
 
-}
+        else if(status == null){
+          ledWhite.on();
+        }
+        else {
+          ledRed.off();
+          ledGreen.off();
+          ledWhite.off();
+          ledOrange.off();
+        }
+        console.log('running a task every one minutes');
+      });
 
 
-      // ledRed.blink(500);
+
+
     });
     // Show the HTML for the Google homepage.
   }
