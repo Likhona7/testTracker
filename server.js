@@ -81,9 +81,7 @@ board.on("ready", function() {
         //////////////////////////////////////////////blue ligght///////////////////
         var travisTime = timezone.tz(time_started, "Africa/Johannesburg")
         console.log(travisTime);
-        //var dateTime = time_started.replace(/T/g, " ").replace(/Z/g, "");
-        // var dateTime = dateTime.split(" ");
-        // console.log(time_started);
+
         var now = moment(new Date());
         //  todays date
         var end = moment(travisTime); // another date//
@@ -92,17 +90,14 @@ board.on("ready", function() {
         var seconds = duration.asSeconds(); //
         console.log(seconds + " " + "seconds")
         if (seconds >= 100) {
-//////
+
           //switchOffLeds();
 
-          ledBlue.on(100);
+          ledBlue.blink(100);
 
         }
 
-        // the led in 500 ms on - off phase periods
 
-
-        //////////////////////////////
         ////////////////////////////////////////////////////////////////////////////////
         else if (status == 0) {
           switchOffLeds();
