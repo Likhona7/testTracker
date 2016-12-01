@@ -93,7 +93,7 @@ board.on("ready", function() {
 
           switchOffLeds();
 
-          ledBlue.blink(500)
+          ledBlue.blink(100)
         }
 
 
