@@ -57,8 +57,11 @@ board.on("ready", function() {
         var end = moment(travisTime); // another date//
     //    console.log(end);
         var duration = moment.duration(now.diff(end));//
-        var hours = duration.asSeconds();//
-         console.log(hours +" "+ "seconds")
+        var seconds = duration.asSeconds();//
+         console.log(seconds +" "+ "seconds")
+         if(seconds >= 300){
+           ledBlue.blink(100)
+         }
 
 // var time = []
 
