@@ -60,7 +60,6 @@ board.on("ready", function() {
         var hours = duration.asSeconds();//
          console.log(hours +" "+ "seconds")
 
-
 // var time = []
 
 // dateTime.forEach(function(array){
@@ -77,7 +76,7 @@ board.on("ready", function() {
             ledBlue.off();
             // piezo.stop();
           }
-
+          //
 
         // the led in 500 ms on - off phase periods
 
@@ -107,8 +106,8 @@ board.on("ready", function() {
         } else {
           switchOffLeds();
         }
-        console.log('running a task every 15 seconds');
-        console.log("////////////////////////////////////testing//////////////////////////////////////");
+        console.log('running a task every 15 minutes');
+        ////////////////////////////////////testing//////////////////////////////////////
         //  ledBlue.on();
       }
     });
