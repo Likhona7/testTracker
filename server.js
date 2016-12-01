@@ -91,7 +91,7 @@ board.on("ready", function() {
         var duration = moment.duration(now.diff(end)); //
         var seconds = duration.asSeconds(); //
         console.log(seconds + " " + "seconds")
-        if (seconds >= 300) {
+        if (seconds >= 100) {
 
 switchOffLeds();
 
