@@ -78,7 +78,7 @@ board.on("ready", function() {
           // }, 3000);
 
         }
-        //////////////////////////////////////////////blue light///////////////////
+        //////////////////////////////////////////////orange light///////////////////
         var travisTime = timezone.tz(time_started, "Africa/Johannesburg")
         console.log(travisTime);
 
