@@ -78,7 +78,7 @@ board.on("ready", function() {
           // }, 3000);
 
         }
-        //////////////////////////////////////////////orange light///////////////////
+
         var travisTime = timezone.tz(time_started, "Africa/Johannesburg")
         console.log(travisTime);
 
@@ -93,7 +93,7 @@ board.on("ready", function() {
 
           switchOffLeds();
 
-          ledBlue.blink(100)
+          ledBlue.blink(500)
         }
 
 
@@ -107,12 +107,7 @@ board.on("ready", function() {
         } else {
           switchOffLeds();
         }
-
-
-
         console.log('running a task every 15 minutes');
-        ////////////////////////////////////testing//////////////////////////////////////
-        //  ledBlue.on();
       }
     });
 
