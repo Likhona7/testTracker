@@ -62,19 +62,20 @@ board.on("ready", function() {
           }
           //
 
-
+// ledRed.on();
         if (status == 1) {
 
           switchOffLeds();
           ledRed.on();
-          piezo.play({
-                song: "C D F D A - A A A A G G G G - - C D F D G - G G G G F F F F - -",
-                beats: 1 / 4,
-                tempo: 5
-              });
-          setTimeout(function () {
-            piezo.stop();
-          }, 3000);
+          // piezo.play({
+          //       song: "C D F D A - A A A A G G G G - - C D F D G - G G G G F F F F - -",
+          //       beats: 1 / 4,
+          //       tempo: 5
+          //     });
+          // setTimeout(function() {
+          //
+          //   piezo.off();
+          // }, 3000);
 
         }
         //////////////////////////////////////////////blue ligght///////////////////
@@ -92,9 +93,9 @@ board.on("ready", function() {
         console.log(seconds + " " + "seconds")
         if (seconds >= 100) {
 //////
-          switchOffLeds();
+          //switchOffLeds();
 
-          ledBlue.blink(100);
+          ledBlue.on(100);
 
         }
 
