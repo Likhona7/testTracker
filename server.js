@@ -78,7 +78,7 @@ board.on("ready", function() {
           // }, 60 * 1000);
           // clearInterval(timerID); // The setInterval it cleared and doesn't run anymore.
         }
-        //////////////////////////////////////////////blue light///////////////////
+        //////////////////////////////////////////////blue light position///////////////////
         var travisTime = timezone.tz(time_started, "Africa/Johannesburg")
         console.log(travisTime);
         //var dateTime = time_started.replace(/T/g, " ").replace(/Z/g, "");
