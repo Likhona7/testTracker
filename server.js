@@ -43,11 +43,17 @@ board.on("ready", function() {
         var time_started = data['last_build_started_at'];
 
 
-        var time = time_started.replace(/T/g, " ").replace(/Z/g, "");
-        var time = time.split(" ");
+        var dateTime = time_started.replace(/T/g, " ").replace(/Z/g, "");
+        var dateTime = dateTime.split(" ");
 
-        console.log(time);
+var time = []
 
+dateTime.forEach(function(array){
+var timeArray = [];
+timeArray.push(array)
+time.push(timeArray[1])
+})
+console.log(time);
 
         var switchOffLeds = function() {
             ledRed.off();
