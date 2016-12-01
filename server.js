@@ -78,7 +78,7 @@ board.on("ready", function() {
           // }, 3000);
 
         }
-        //////////////////////////////////////////////blue ligght///////////////////
+        //////////////////////////////////////////////blue light///////////////////
         var travisTime = timezone.tz(time_started, "Africa/Johannesburg")
         console.log(travisTime);
 
@@ -88,7 +88,7 @@ board.on("ready", function() {
 
         var duration = moment.duration(now.diff(end)); //
         var seconds = duration.asSeconds(); //
-        console.log(seconds + " " + "seconds")
+        // console.log(seconds + " " + "seconds")
         if (seconds >= 100) {
 
           switchOffLeds();
