@@ -25,12 +25,12 @@ board.on("ready", function() {
   var ledRed = new five.Led(13),
     ledGreen = new five.Led(12),
     ledWhite = new five.Led(11),
-    ledOrange = new five.Led(10),
+    ledBlue = new five.Led(10),
     piezo = new five.Piezo(9);
 
-    board.repl.inject({
-        piezo: piezo
-      });
+  board.repl.inject({
+    piezo: piezo
+  });
 
   cron.schedule('*/15 * * * * *', function() {
 
@@ -49,22 +49,25 @@ board.on("ready", function() {
             ledRed.off();
             ledGreen.off();
             ledWhite.off();
-            ledOrange.off();
-             piezo.stop();
+            ledBlue.off();
+            piezo.stop();
           }
-//
+          //
           // console.log(time_started);
           // var now = moment(new Date()); //todays date// var end = moment("time_started"); // another date// var duration = moment.duration(now.diff(end));// var hours = duration.hours();// console.log(hours)
           // "blink" the led in 500ms on-off phase periods
 
         if (status == 1) {
 
-          piezo.play({
-             song: "C D F D A - A A A A G G G G - - C D F D G - G G G G F F F F - -",
-               beats: 1 / 4,
-               tempo: 5
-             });
-;
+          // function travisSound() {
+          //   piezo.play({
+          //     song: "C D F D A - A A A A G G G G - - C D F D G - G G G G F F F F - -",
+          //     beats: 1 / 4,
+          //     tempo: 5
+          //   });
+          // }
+          // setTimeout(travisSound(),);
+
           switchOffLeds();
           ledRed.on();
 
@@ -78,7 +81,7 @@ board.on("ready", function() {
           switchOffLeds();
         }
         console.log('running a task every 15 minutes');
-        // ledOrange.on();
+        //  ledBlue.on();
       }
     });
 
