@@ -93,9 +93,9 @@ board.on("ready", function() {
         console.log(seconds + " " + "seconds")
         if (seconds >= 300) {
 
+switchOffLeds();
 
-
-          ledBlue.blink(100)
+          ledBlue.on()
 
         }
 
