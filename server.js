@@ -67,16 +67,15 @@ board.on("ready", function() {
 
           switchOffLeds();
           ledRed.on();
-          // var timerID = setInterval(function() {
-          //   if (ledRed.on()) {
-          //     piezo.play({
-          //       song: "C D F D A - A A A A G G G G - - C D F D G - G G G G F F F F - -",
-          //       beats: 1 / 4,
-          //       tempo: 5
-          //     });
-          //   }
-          // }, 60 * 1000);
-          // clearInterval(timerID); // The setInterval it cleared and doesn't run anymore.
+          piezo.play({
+                song: "C D F D A - A A A A G G G G - - C D F D G - G G G G F F F F - -",
+                beats: 1 / 4,
+                tempo: 5
+              });
+          setTimeout(function () {
+            piezo.stop();
+          }, 3000);
+
         }
         //////////////////////////////////////////////blue ligght///////////////////
         var travisTime = timezone.tz(time_started, "Africa/Johannesburg")
