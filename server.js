@@ -62,26 +62,6 @@ board.on("ready", function() {
           }
           //
 
-        var travisTime = timezone.tz(time_started, "Africa/Johannesburg")
-        console.log(travisTime);
-        //var dateTime = time_started.replace(/T/g, " ").replace(/Z/g, "");
-        // var dateTime = dateTime.split(" ");
-        // console.log(time_started);
-        var now = moment(new Date());
-        //  todays date
-        var end = moment(travisTime); // another date//
-        //    console.log(end);
-        var duration = moment.duration(now.diff(end)); //
-        var seconds = duration.asSeconds(); //
-        console.log(seconds + " " + "seconds")
-        if (seconds >= 300) {
-
-
-          ledBlue.blink(100)
-        }
-
-        // the led in 500 ms on - off phase periods
-
 
         if (status == 1) {
 
@@ -98,6 +78,30 @@ board.on("ready", function() {
           // }, 60 * 1000);
           // clearInterval(timerID); // The setInterval it cleared and doesn't run anymore.
         }
+        //////////////////////////////////////////////blue light///////////////////
+        var travisTime = timezone.tz(time_started, "Africa/Johannesburg")
+        console.log(travisTime);
+        //var dateTime = time_started.replace(/T/g, " ").replace(/Z/g, "");
+        // var dateTime = dateTime.split(" ");
+        // console.log(time_started);
+        var now = moment(new Date());
+        //  todays date
+        var end = moment(travisTime); // another date//
+        //    console.log(end);
+        var duration = moment.duration(now.diff(end)); //
+        var seconds = duration.asSeconds(); //
+        console.log(seconds + " " + "seconds")
+        if (seconds >= 300) {
+
+
+
+          ledBlue.blink(100)
+
+        }
+
+        // the led in 500 ms on - off phase periods
+
+
         //////////////////////////////
         ////////////////////////////////////////////////////////////////////////////////
         else if (status == 0) {
@@ -120,9 +124,7 @@ board.on("ready", function() {
 
     // Show the HTML for the Google homepage.
   });
-  cron.schedule('*/300 * * * * *', function() {
 
-  });
 
 
 });
