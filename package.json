@@ -22,6 +22,7 @@
   "homepage": "https://github.com/Onwa2014/testTracker#readme",
   "dependencies": {
     "mocha": "^3.2.0",
-    "node-cron": "~1.1.2"
+    "node-cron": "~1.1.2",
+    "moment-timezone": "~0.5.10"
   }
 }

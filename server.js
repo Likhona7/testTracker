@@ -1,5 +1,7 @@
+
 var request = require('request');
 var moment = require('moment');
+var timezone = require('moment-timezone');
 var five = require("johnny-five");
 var cron = require('node-cron');
 ///
@@ -32,7 +34,7 @@ board.on("ready", function() {
     piezo: piezo
   });
 
-  cron.schedule('*/10 * * * * *', function() {
+  cron.schedule('*/5 * * * * *', function() {
 
     request(url, function(error, response, body) {
       if (!error && response.statusCode == 200) {
@@ -43,19 +45,22 @@ board.on("ready", function() {
         var time_started = data['last_build_started_at'];
 
 
-        var dateTime = time_started.replace(/T/g, " ").replace(/Z/g, "");
+        var travisTime = timezone.tz(time_started, "Africa/Johannesburg")
+        console.log(travisTime);
+
+        //var dateTime = time_started.replace(/T/g, " ").replace(/Z/g, "");
         // var dateTime = dateTime.split(" ");
 
         // console.log(time_started);
         var now = moment(new Date());
         //  todays date
-        var end = moment(dateTime); // another date//
-        console.log(end);
+        var end = moment(travisTime); // another date//
+    //    console.log(end);
         var duration = moment.duration(now.diff(end));//
-        var hours = duration.asHours();//
-        console.log(hours + "hours")
+        var hours = duration.asSeconds();//
+         console.log(hours +" "+ "seconds")
 
-      
+
 // var time = []
 
 // dateTime.forEach(function(array){
