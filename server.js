@@ -92,10 +92,10 @@ board.on("ready", function() {
         var seconds = duration.asSeconds(); //
         console.log(seconds + " " + "seconds")
         if (seconds >= 100) {
-
+//////
           switchOffLeds();
 
-          ledBlue.on()
+          ledBlue.blink(100);
 
         }
 
