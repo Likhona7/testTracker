@@ -78,7 +78,7 @@ board.on("ready", function() {
           // }, 60 * 1000);
           // clearInterval(timerID); // The setInterval it cleared and doesn't run anymore.
         }
-        //////////////////////////////////////////////blue light position///////////////////
+        //////////////////////////////////////////////blue ligght///////////////////
         var travisTime = timezone.tz(time_started, "Africa/Johannesburg")
         console.log(travisTime);
         //var dateTime = time_started.replace(/T/g, " ").replace(/Z/g, "");
@@ -93,7 +93,7 @@ board.on("ready", function() {
         console.log(seconds + " " + "seconds")
         if (seconds >= 100) {
 
-switchOffLeds();
+          switchOffLeds();
 
           ledBlue.on()
 
