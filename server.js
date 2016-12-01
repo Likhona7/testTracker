@@ -82,6 +82,7 @@ board.on("ready", function() {
           // }, 60 * 1000);
           // clearInterval(timerID); // The setInterval it cleared and doesn't run anymore.
         }
+        //////////////////////////////
         ////////////////////////////////////////////////////////////////////////////////
         else if (status == 0) {
           switchOffLeds();
