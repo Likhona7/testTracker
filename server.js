@@ -42,7 +42,11 @@ board.on("ready", function() {
         var status = data['last_build_status'];
         var time_started = data['last_build_started_at'];
 
-        console.log(status);
+
+        var time = time_started.replace(/T/g, " ").replace(/Z/g, "");
+        var time = time.split(" ");
+
+        console.log(time);
 
 
         var switchOffLeds = function() {
@@ -50,28 +54,36 @@ board.on("ready", function() {
             ledGreen.off();
             ledWhite.off();
             ledBlue.off();
-            piezo.stop();
+            // piezo.stop();
           }
           //
-          // console.log(time_started);
-          // var now = moment(new Date()); //todays date// var end = moment("time_started"); // another date// var duration = moment.duration(now.diff(end));// var hours = duration.hours();// console.log(hours)
-          // "blink" the led in 500ms on-off phase periods
+        // console.log(time_started);
+        // var now = moment(new Date());
+        // //  todays date
+        // var end = moment("time_started"); // another date//
+        // var duration = moment.duration(now.diff(end));//
+        // var hours = duration.hours();//
+        // console.log(hours)
+
+        // the led in 500 ms on - off phase periods
 
         if (status == 1) {
 
-          // function travisSound() {
-          //   piezo.play({
-          //     song: "C D F D A - A A A A G G G G - - C D F D G - G G G G F F F F - -",
-          //     beats: 1 / 4,
-          //     tempo: 5
-          //   });
-          // }
-          // setTimeout(travisSound(),);
-
           switchOffLeds();
           ledRed.on();
-
-        } else if (status == 0) {
+          // var timerID = setInterval(function() {
+          //   if (ledRed.on()) {
+          //     piezo.play({
+          //       song: "C D F D A - A A A A G G G G - - C D F D G - G G G G F F F F - -",
+          //       beats: 1 / 4,
+          //       tempo: 5
+          //     });
+          //   }
+          // }, 60 * 1000);
+          // clearInterval(timerID); // The setInterval it cleared and doesn't run anymore.
+        }
+        ////////////////////////////////////////////////////////////////////////////////
+        else if (status == 0) {
           switchOffLeds();
           ledGreen.on();
         } else if (status == null) {
