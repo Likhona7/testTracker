@@ -52,7 +52,7 @@ board.on("ready", function() {
         var end = moment(dateTime); // another date//
         console.log(end);
         var duration = moment.duration(now.diff(end));//
-        var hours = duration.hours();//
+        var hours = duration.asHours();//
         console.log(hours + "hours")
 
 
