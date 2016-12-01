@@ -85,13 +85,13 @@ board.on("ready", function() {
         var now = moment(new Date());
         //  todays date
         var end = moment(travisTime); // another date//
-        //    console.log(end);
+
         var duration = moment.duration(now.diff(end)); //
         var seconds = duration.asSeconds(); //
         console.log(seconds + " " + "seconds")
         if (seconds >= 100) {
 
-          //switchOffLeds();
+          switchOffLeds();
 
           ledBlue.blink(100);
 
