@@ -81,6 +81,7 @@ board.on("ready", function() {
           switchOffLeds();
         }
         console.log('running a task every 15 minutes');
+        ////////////////////////////////////testing//////////////////////////////////////
         //  ledBlue.on();
       }
     });
