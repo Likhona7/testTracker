@@ -32,7 +32,7 @@ board.on("ready", function() {
     piezo: piezo
   });
 
-  cron.schedule('*/15 * * * * *', function() {
+  cron.schedule('*/10 * * * * *', function() {
 
     request(url, function(error, response, body) {
       if (!error && response.statusCode == 200) {
@@ -55,6 +55,7 @@ board.on("ready", function() {
         var hours = duration.asHours();//
         console.log(hours + "hours")
 
+      
 // var time = []
 
 // dateTime.forEach(function(array){
@@ -101,8 +102,8 @@ board.on("ready", function() {
         } else {
           switchOffLeds();
         }
-        console.log('running a task every 15 minutes');
-        ////////////////////////////////////testing//////////////////////////////////////
+        console.log('running a task every 15 seconds');
+        console.log("////////////////////////////////////testing//////////////////////////////////////");
         //  ledBlue.on();
       }
     });
