@@ -88,6 +88,7 @@ console.log(time);
           // }, 60 * 1000);
           // clearInterval(timerID); // The setInterval it cleared and doesn't run anymore.
         }
+        //////////////////////////////
         ////////////////////////////////////////////////////////////////////////////////
         else if (status == 0) {
           switchOffLeds();
@@ -99,6 +100,7 @@ console.log(time);
           switchOffLeds();
         }
         console.log('running a task every 15 minutes');
+        ////////////////////////////////////testing//////////////////////////////////////
         //  ledBlue.on();
       }
     });
