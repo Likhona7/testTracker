@@ -44,10 +44,19 @@ board.on("ready", function() {
 
 
         var dateTime = time_started.replace(/T/g, " ").replace(/Z/g, "");
-        var dateTime = dateTime.split(" ");
+        // var dateTime = dateTime.split(" ");
+
+        // console.log(time_started);
+        var now = moment(new Date());
+        //  todays date
+        var end = moment(dateTime); // another date//
+        console.log(end);
+        var duration = moment.duration(now.diff(end));//
+        var hours = duration.asHours();//
+        console.log(hours + "hours")
 
 // var time = []
-//
+
 // dateTime.forEach(function(array){
 // var timeArray = [];
 // timeArray.push(array)
@@ -62,14 +71,7 @@ board.on("ready", function() {
             ledBlue.off();
             // piezo.stop();
           }
-        //   //
-        // console.log(time_started);
-        // var now = moment(new Date());
-        // //  todays date
-        // var end = moment(3); // another date//
-        // var duration = moment.duration(now.diff(end));//
-        // var hours = duration.hours(dateTime);//
-        // console.log(hours)
+
 
         // the led in 500 ms on - off phase periods
 
