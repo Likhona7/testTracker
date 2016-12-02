@@ -72,15 +72,15 @@ var excludeRedLed = function(){
 /////
            switchOffLeds();
           ledRed.on();
-          piezo.play({
-                song: "C D F D A - A A A A G G G G - - C D F D G - G G G G F F F F - -",
-                beats: 1 / 4,
-                tempo: 5
-              });
-          setTimeout(function() {
-
-            piezo.off();
-          }, 3000);
+          // piezo.play({
+          //       song: "C D F D A - A A A A G G G G - - C D F D G - G G G G F F F F - -",
+          //       beats: 1 / 4,
+          //       tempo: 5
+          //     });
+          // setTimeout(function() {
+          //
+          //   piezo.off();
+          // }, 3000);
         }
 ///
         else if (status == 0) {
