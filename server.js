@@ -92,10 +92,9 @@ board.on("ready", function() {
         if (seconds >= 100) {
 
           switchOffLeds();
-
           ledBlue.blink(100)
         }
-
+/
 
         ////////////////////////////////////////////////////////////////////////////////
         else if (status == 0) {
