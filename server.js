@@ -52,7 +52,11 @@ board.on("ready", function() {
             // piezo.stop();
           }
 
-
+var excludeRedLed = function(){
+  ledGreen.off();
+  ledWhite.off();
+  ledBlue.off();
+}
 
         var travisTime = timezone.tz(time_started, "Africa/Johannesburg")
         console.log(travisTime);
@@ -64,11 +68,11 @@ board.on("ready", function() {
         console.log(seconds + " " + "seconds")
 
      if (seconds >= 100) {
-          switchOffLeds();
+           excludeRedLed();
           ledBlue.blink(100)
         }
         else if (status == 1) {
-
+///
            switchOffLeds();
           ledRed.on();
           // piezo.play({
