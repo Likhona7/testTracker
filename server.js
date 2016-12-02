@@ -37,11 +37,11 @@ board.on("ready", function() {
       if (!error && response.statusCode == 200) {
         var data = JSON.parse(body)
 
-        // console.log(data)
+        //  console.log(data)
         var status = data['last_build_status'];
         var time_started = data['last_build_started_at'];
 
-
+console.log(status);
         var switchOffLeds = function() {
             ledRed.off();
             ledGreen.off();
@@ -54,9 +54,13 @@ var excludeRedLed = function(){
   ledWhite.off();
   ledBlue.off();
 }
+//
+// var excludeBlue = function(){
+//
+// }
 
         var travisTime = timezone.tz(time_started, "Africa/Johannesburg")
-        console.log(travisTime);
+        // console.log(travisTime);
 
         var now = moment(new Date());
         var end = moment(travisTime); // another date//
@@ -72,15 +76,15 @@ var excludeRedLed = function(){
 /////
            switchOffLeds();
           ledRed.on();
-          piezo.play({
-                song: "C D F D A - A A A A G G G G - - C D F D G - G G G G F F F F - -",
-                beats: 1 / 4,
-                tempo: 5
-              });
-          setTimeout(function() {
-
-            piezo.off();
-          }, 3000);
+          // piezo.play({
+          //       song: "C D F D A - A A A A G G G G - - C D F D G - G G G G F F F F - -",
+          //       beats: 1 / 4,
+          //       tempo: 5
+          //     });
+          // setTimeout(function() {
+          //
+          //   piezo.off();
+          // }, 3000);
         }
 /////
         else if (status == 0) {
