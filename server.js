@@ -82,7 +82,7 @@ var excludeRedLed = function(){
             piezo.off();
           }, 3000);
         }
-
+///
         else if (status == 0) {
           switchOffLeds();
           ledGreen.on();
