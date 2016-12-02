@@ -77,7 +77,7 @@ board.on("ready", function() {
           //   piezo.off();
           // }, 3000);
 
-        }
+        }//////
 
         var travisTime = timezone.tz(time_started, "Africa/Johannesburg")
         console.log(travisTime);
