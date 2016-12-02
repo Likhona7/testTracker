@@ -94,7 +94,7 @@ var excludeRedLed = function(){
          else {
           switchOffLeds();
         }
-        console.log('running a task every 15 minutes');
+        console.log('running a task every 15 seconds');
       }
     });
 
