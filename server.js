@@ -31,7 +31,7 @@ board.on("ready", function() {
     piezo: piezo
   });
 
-  cron.schedule('*/3 * * * * *', function() {
+  cron.schedule('*/5 * * * * *', function() {
 
     request(url, function(error, response, body) {
       if (!error && response.statusCode == 200) {
