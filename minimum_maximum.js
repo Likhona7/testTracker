@@ -17,7 +17,7 @@ return min;
 exports.maximum = function(m){
 var max = -Infinity;
 m.forEach(function(array2){
-if(array2 > max){
+if(array2 < max){
   max = array2;
 }
 
