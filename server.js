@@ -65,7 +65,7 @@ var excludeRedLed = function(){
         var seconds = duration.asSeconds(); //
         console.log(seconds + " " + "seconds")
 
-     if (seconds >= 100) {
+     if (seconds >= 50) {
            excludeRedLed();
           ledBlue.blink(100)
         }
