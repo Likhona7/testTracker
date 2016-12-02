@@ -69,7 +69,7 @@ var excludeRedLed = function(){
            excludeRedLed();
           ledBlue.blink(100)
         }
-        else if (status == 1) {
+        else if (status === 1) {
            switchOffLeds();
           ledRed.on();
           // piezo.play({
