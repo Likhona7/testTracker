@@ -16,12 +16,10 @@ var username = process.argv[2] || 'Onwa2014';
 var repoName = process.argv[3] || 'testTracker';
 
 var url = "https://api.travis-ci.org/repos/" + username + "/" + repoName + ".json";
-console.log(url);
+// console.log(url);
 //running for which user and repo
 var board = new five.Board();
 board.on("ready", function() {
-
-
 
   var ledRed = new five.Led(13),
     ledGreen = new five.Led(12),
@@ -74,15 +72,15 @@ var excludeRedLed = function(){
 ///
            switchOffLeds();
           ledRed.on();
-          // piezo.play({
-          //       song: "C D F D A - A A A A G G G G - - C D F D G - G G G G F F F F - -",
-          //       beats: 1 / 4,
-          //       tempo: 5
-          //     });
-          // setTimeout(function() {
-          //
-          //   piezo.off();
-          // }, 3000);
+          piezo.play({
+                song: "C D F D A - A A A A G G G G - - C D F D G - G G G G F F F F - -",
+                beats: 1 / 4,
+                tempo: 5
+              });
+          setTimeout(function() {
+
+            piezo.off();
+          }, 3000);
         }
 
         else if (status == 0) {
