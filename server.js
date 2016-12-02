@@ -54,10 +54,7 @@ var excludeRedLed = function(){
   ledWhite.off();
   ledBlue.off();
 }
-//
-// var excludeBlue = function(){
-//
-// }
+
 
         var travisTime = timezone.tz(time_started, "Africa/Johannesburg")
         // console.log(travisTime);
@@ -73,7 +70,6 @@ var excludeRedLed = function(){
           ledBlue.blink(100)
         }
         else if (status == 1) {
-/////
            switchOffLeds();
           ledRed.on();
           // piezo.play({
