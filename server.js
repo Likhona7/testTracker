@@ -53,7 +53,6 @@ board.on("ready", function() {
           }
 
 var excludeRedLed = function(){
-  ledGreen.off();
   ledWhite.off();
   ledBlue.off();
 }
